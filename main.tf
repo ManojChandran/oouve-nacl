@@ -17,19 +17,19 @@ provider "aws" {
 }
 
 module "nacl-public" {
-  source = "./modules/10_nacl_pub"
+  source             = "./modules/10_nacl_pub"
   vpc-id             = "${var.vpc-id}"
   pub-subnet-tagname = "${var.pub-subnet-tagname}"
 }
 
 module "nacl-private" {
-  source = "./modules/11_nacl_pvt"
+  source             = "./modules/11_nacl_pvt"
   vpc-id             = "${var.vpc-id}"
   pvt-subnet-tagname = "${var.pvt-subnet-tagname}"
 }
 
 module "nacl-data" {
-  source = "./modules/12_nacl_db"
-  vpc-id             = "${var.vpc-id}"
+  source            = "./modules/12_nacl_db"
+  vpc-id            = "${var.vpc-id}"
   db-subnet-tagname = "${var.db-subnet-tagname}"
 }
